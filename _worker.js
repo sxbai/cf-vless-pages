@@ -7,7 +7,7 @@ import { connect } from "cloudflare:sockets";
 let userID = "77a571fb-4fd2-4b37-8596-1b7d97da385c";
 
 const proxyIPs = ["cdn.xn--b6gac.eu.org"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
-const cn_hostnames = ["www.alipan.com"];
+const cn_hostnames = [""];
 
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
