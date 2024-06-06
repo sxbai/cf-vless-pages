@@ -6,7 +6,7 @@ import { connect } from "cloudflare:sockets";
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = "77a571fb-4fd2-4b37-8596-1b7d97da385c";
 
-const proxyIPs = ["workers.cloudflare.cyou"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
+const proxyIPs = ["cdn.xn--b6gac.eu.org"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
 const cn_hostnames = ["www.alipan.com"];
 
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
@@ -30,7 +30,7 @@ export default {
       if (!upgradeHeader || upgradeHeader !== "websocket") {
         const url = new URL(request.url);
         switch (url.pathname) {
-          case "/cf":
+          case "/":
             return new Response(JSON.stringify(request.cf, null, 4), {
               status: 200,
               headers: {
